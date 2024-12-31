@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- 引入自訂 CSS -->
-    <link rel="stylesheet" href="css/main.css">
+     <link rel="stylesheet" href="css/main.css">
 
     <style>
         /* 返回頂部按鈕樣式 */
@@ -35,6 +35,16 @@
 
         #back-to-top:hover {
             background-color: rgba(128, 128, 128, 0.9); /* 增加透明度 */
+        }
+
+        /* 淡入效果 */
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in.show {
+            opacity: 1;
         }
     </style>
 </head>
@@ -69,9 +79,8 @@
     <!-- 主內容 -->
     <main>
         <!-- 區段 1：固定背景 -->
-        <section class="cd-section cd-section--bg-fixed"
-           <section class="cd-section cd-section--bg-fixed"
-    style="background-image: url('/my-website/20241126/img/adina.jpg');">
+        <section class="cd-section cd-section--bg-fixed fade-in"
+            style="background-image: url('/my-website/20241126/img/adina.jpg');">
             <div class="container text-center text-white">
                 <h1>Eternal Return</h1>
                 <p>Adina</p>
@@ -79,24 +88,24 @@
         </section>
 
         <!-- 區段 2：純色背景 -->
-        <section class="cd-section" style="background-color: #dfefff;">
+        <section class="cd-section fade-in" style="background-color: #dfefff;">
         </section>
 
         <!-- 區段 3：另一個固定背景 -->
-        <section class="cd-section cd-section--bg-fixed"
-            style="background-image: url('../20241126/img/commission.jpg');">
+        <section class="cd-section cd-section--bg-fixed fade-in"
+            style="background-image: url('/my-website/20241126/img/commission.jpg');">
             <div class="container text-center text-white">
                 <h1>Commission</h1>
             </div>
         </section>
 
         <!-- 區段 4：純色背景 -->
-        <section class="cd-section" style="background-color: #ffe4ef;">
+        <section class="cd-section fade-in" style="background-color: #ffe4ef;">
         </section>
 
         <!-- 區段 5：另一個固定背景 -->
-        <section class="cd-section cd-section--bg-fixed"
-            style="background-image: url('../20241126/img/ff14.png');">
+        <section class="cd-section cd-section--bg-fixed fade-in"
+            style="background-image: url('/my-website/20241126/img/ff14.png');">
             <div class="container text-center text-white">
                 <h1>FFXIV</h1>
                 <p>ヒュトロダエウス</p>
@@ -134,6 +143,14 @@
             window.scrollTo({
                 top: 0,
                 behavior: "smooth" // 平滑滾動效果
+            });
+        });
+
+        // 淡入動畫初始化
+        document.addEventListener("DOMContentLoaded", () => {
+            const fadeElements = document.querySelectorAll(".fade-in");
+            fadeElements.forEach(el => {
+                el.classList.add("show");
             });
         });
     </script>
