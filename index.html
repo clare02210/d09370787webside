@@ -36,6 +36,25 @@
         #back-to-top:hover {
             background-color: rgba(128, 128, 128, 0.9); /* 增加透明度 */
         }
+
+        /* 讓背景圖片響應式調整 */
+        .cd-section--bg-fixed {
+            background-size: cover; /* 背景覆蓋整個區塊 */
+            background-position: center; /* 背景居中顯示 */
+            background-attachment: fixed; /* 背景固定 */
+        }
+
+        /* 手機視圖優化 */
+        @media (max-width: 768px) {
+            .cd-section--bg-fixed {
+                background-attachment: scroll; /* 手機上改成滾動，提升效能 */
+            }
+        }
+
+        /* 內容區域保持間距 */
+        .cd-section .container {
+            padding: 100px 15px; /* 預設上下間距 */
+        }
     </style>
 </head>
 
@@ -69,8 +88,7 @@
     <!-- 主內容 -->
     <main>
         <!-- 區段 1：固定背景 -->
-        <section class="cd-section cd-section--bg-fixed"
-            style="background-image:url(./img/adina.jpg);">
+        <section class="cd-section cd-section--bg-fixed" style="background-image:url('./img/adina.jpg');">
             <div class="container text-center text-white">
                 <h1>Eternal Return</h1>
                 <p>Adina</p>
@@ -82,8 +100,7 @@
         </section>
 
         <!-- 區段 3：另一個固定背景 -->
-        <section class="cd-section cd-section--bg-fixed"
-            style="background-image: url('./img/commission.jpg');">
+        <section class="cd-section cd-section--bg-fixed" style="background-image:url('./img/commission.jpg');">
             <div class="container text-center text-white">
                 <h1>Commission</h1>
             </div>
@@ -94,8 +111,7 @@
         </section>
 
         <!-- 區段 5：另一個固定背景 -->
-        <section class="cd-section cd-section--bg-fixed"
-            style="background-image: url('./img/ff14.png');">
+        <section class="cd-section cd-section--bg-fixed" style="background-image:url('./img/ff14.png');">
             <div class="container text-center text-white">
                 <h1>FFXIV</h1>
                 <p>ヒュトロダエウス</p>
