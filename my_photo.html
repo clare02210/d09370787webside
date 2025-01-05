@@ -39,6 +39,36 @@
             background-color: rgba(128, 128, 128, 0.9);
             /* 增加透明度 */
         }
+
+        /* 讓背景圖片響應式 */
+        .cd-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .cd-section--bg-fixed {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .cd-section--bg-fixed {
+                background-attachment: scroll;
+            }
+        }
+
+        .cd-section img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -72,7 +102,7 @@
     <!-- 主內容 -->
     <main>
         <!-- 區段 1：固定背景 -->
-        <section class="cd-section cd-section--bg-fixed" style="background-image: url('./img/1.png');">
+        <section class="cd-section cd-section--bg-fixed" style="background-image: url('../20241126/img/1.png');">
         </section>
 
         <!-- 區段 2：純色背景 -->
@@ -80,7 +110,7 @@
         </section>
 
         <!-- 區段 3：另一個固定背景 -->
-        <section class="cd-section cd-section--bg-fixed" style="background-image: url('./img/2.png');">
+        <section class="cd-section cd-section--bg-fixed" style="background-image: url('../20241126/img/2.png');">
         </section>
 
         <!-- 區段 4：純色背景 -->
@@ -88,17 +118,16 @@
         </section>
 
         <!-- 區段 5：另一個固定背景 -->
-        <section class="cd-section cd-section--bg-fixed" style="background-image: url('./img/3.png');">
+        <section class="cd-section cd-section--bg-fixed" style="background-image: url('../20241126/img/3.png');">
         </section>
 
         <!-- 區段 6：純色背景 -->
         <section class="cd-section" style="background-color: #e6dde6;">
+        </section>
 
-            <!-- 區段 5：另一個固定背景 -->
-            <section class="cd-section cd-section--bg-fixed"
-                style="background-image: url('../20241126/img/photo/4.png');">
-            </section>
-
+        <!-- 區段 7：圖片區塊 -->
+        <section class="cd-section">
+            <img src="../20241126/img/photo/4.png" alt="Responsive Image Section">
         </section>
     </main>
 
@@ -115,23 +144,18 @@
 
     <!-- 返回頂部按鈕的 JavaScript -->
     <script>
-        // 取得按鈕元素
         const backToTopButton = document.getElementById("back-to-top");
-
-        // 滾動事件監聽
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) { // 當滾動超過 300px 時顯示按鈕
+            if (window.scrollY > 300) {
                 backToTopButton.style.display = "flex";
             } else {
                 backToTopButton.style.display = "none";
             }
         });
-
-        // 點擊事件監聽
         backToTopButton.addEventListener("click", () => {
             window.scrollTo({
                 top: 0,
-                behavior: "smooth" // 平滑滾動效果
+                behavior: "smooth"
             });
         });
     </script>
